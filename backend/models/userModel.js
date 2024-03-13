@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, "Password can't be blank"],
         minLength: [6, "Enter atleast 6 characters"],
-        maxLength: [25, "Enter maximum of 25 characters"]
+        //maxLength: [25, "Enter maximum of 25 characters"]
     },
     photo: {
         type: String,
