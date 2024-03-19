@@ -1,13 +1,13 @@
 const asyncHandler = require("express-async-handler");
-const Product = require("../models/productModel");
+const Item = require("../models/itemModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
 const cloudinary = require("cloudinary").v2;
 
-// Create Prouct
-const createProduct = asyncHandler(async (req, res) => {
+// Create Item
+const createItem = asyncHandler(async (req, res) => {
   const { name, sku, category, quantity, price, description } = req.body;
 
-  //   Validation
+  // Validation
   if (!name || !category || !quantity || !price || !description) {
     res.status(400);
     throw new Error("Please fill in all fields");
@@ -20,7 +20,7 @@ const createProduct = asyncHandler(async (req, res) => {
     let uploadedFile;
     try {
       uploadedFile = await cloudinary.uploader.upload(req.file.path, {
-        folder: "Pinvent App",
+        folder: "ScholarVault",
         resource_type: "image",
       });
     } catch (error) {
@@ -36,8 +36,8 @@ const createProduct = asyncHandler(async (req, res) => {
     };
   }
 
-  // Create Product
-  const product = await Product.create({
+  // Create Item
+  const item = await Item.create({
     user: req.user.id,
     name,
     sku,
@@ -48,62 +48,62 @@ const createProduct = asyncHandler(async (req, res) => {
     image: fileData,
   });
 
-  res.status(201).json(product);
+  res.status(201).json(item);
 });
 
-// Get all Products
-const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({ user: req.user.id }).sort("-createdAt");
-  res.status(200).json(products);
+// Get all Items
+const getItems = asyncHandler(async (req, res) => {
+  const items = await Item.find({ user: req.user.id }).sort("-createdAt");
+  res.status(200).json(items);
 });
 
-// Get single product
-const getProduct = asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id);
-  // if product doesnt exist
-  if (!product) {
+// Get single item
+const getItem = asyncHandler(async (req, res) => {
+  const item = await Item.findById(req.params.id);
+  // if item doesnt exist
+  if (!item) {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Item not found");
   }
-  // Match product to its user
-  if (product.user.toString() !== req.user.id) {
+  // Match item to its user
+  if (item.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized");
   }
-  res.status(200).json(product);
+  res.status(200).json(item);
 });
 
-// Delete Product
-const deleteProduct = asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id);
-  // if product doesnt exist
-  if (!product) {
+// Delete Item
+const deleteItem = asyncHandler(async (req, res) => {
+  const item = await Item.findById(req.params.id);
+  // if item doesnt exist
+  if (!item) {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Item not found");
   }
-  // Match product to its user
-  if (product.user.toString() !== req.user.id) {
+  // Match item to its user
+  if (item.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized");
   }
-  await product.remove();
-  res.status(200).json({ message: "Product deleted." });
+  await item.remove();
+  res.status(200).json({ message: "Item deleted." });
 });
 
-// Update Product
-const updateProduct = asyncHandler(async (req, res) => {
+// Update Item
+const updateItem = asyncHandler(async (req, res) => {
   const { name, category, quantity, price, description } = req.body;
   const { id } = req.params;
 
-  const product = await Product.findById(id);
+  const item = await Item.findById(id);
 
-  // if product doesnt exist
-  if (!product) {
+  // if item doesnt exist
+  if (!item) {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Item not found");
   }
-  // Match product to its user
-  if (product.user.toString() !== req.user.id) {
+  // Match item to its user
+  if (item.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized");
   }
@@ -115,7 +115,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     let uploadedFile;
     try {
       uploadedFile = await cloudinary.uploader.upload(req.file.path, {
-        folder: "Pinvent App",
+        folder: "ScholarVault",
         resource_type: "image",
       });
     } catch (error) {
@@ -131,8 +131,8 @@ const updateProduct = asyncHandler(async (req, res) => {
     };
   }
 
-  // Update Product
-  const updatedProduct = await Product.findByIdAndUpdate(
+  // Update Item
+  const updatedItem = await Item.findByIdAndUpdate(
     { _id: id },
     {
       name,
@@ -140,7 +140,7 @@ const updateProduct = asyncHandler(async (req, res) => {
       quantity,
       price,
       description,
-      image: Object.keys(fileData).length === 0 ? product?.image : fileData,
+      image: Object.keys(fileData).length === 0 ? item?.image : fileData,
     },
     {
       new: true,
@@ -148,13 +148,13 @@ const updateProduct = asyncHandler(async (req, res) => {
     }
   );
 
-  res.status(200).json(updatedProduct);
+  res.status(200).json(updatedItem);
 });
 
 module.exports = {
-  createProduct,
-  getProducts,
-  getProduct,
-  deleteProduct,
-  updateProduct,
+  createItem,
+  getItems,
+  getItem,
+  deleteItem,
+  updateItem,
 };
