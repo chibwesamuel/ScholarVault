@@ -1,32 +1,37 @@
 import React from 'react';
 import './LoginSignup.css';
+import { FaUser, FaLock } from "react-icons/fa";
 
 const LoginSignup = () => {
     return (
-        <div className='container'>
-            <div className="header">
-                <div className="text">Sign Up</div>
+        <div className='wrapper'>
+            <form action="">
+                <h1>ScholarVault</h1>
                 <div className="underline"></div>
-            </div>
-            <div className="inputs">
-                <div className="input">
-                    <img src={user_icon} alt="" />
-                    <input type="text" />
+                <h1>Sign Up</h1>
+                <div className="input-box">
+                    <input type="text" placeholder='Username' required/>
+                    <FaUser className='icon' />
                 </div>
-                <div className="input">
-                    <img src={email_icon} alt="" />
-                    <input type="email" />
+                <div className="input-box">
+                    <input type="password" placeholder='Password' required/>
+                    <FaLock className='icon' />
                 </div>
-                <div className="input">
-                    <img src={password_icon} alt="" />
-                    <input type="password" />
+
+                <div className="remember-forgot">
+                    <label> <input type='checkbox' />Remember Me</label>
+                    <a href='#'>Forgot Password?</a>
                 </div>
-            </div>
-            <div className="forgot-password">Can't remember Password? <span>Click here!</span></div>
-            <div className="submit-container">
-                <div className="submit">Sign Up</div>
-                <div className="submit">Login</div>
-            </div>
+                <div className="submit-container">
+                    <div type='submit'>Sign Up</div>
+                    <div type='submit'>Login</div>
+                </div>
+                
+
+                <div className='register-link'>
+                <p>Don't have an account yet? <a href='#'>Register</a></p>
+                </div>
+            </form>
         </div>
     )
 }
