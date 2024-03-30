@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const userRoute = require("./routes/userRoute");
 const cookieParser = require("cookie-parser");
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -16,7 +17,8 @@ app.use(bodyParser.json());
 const errorHandler = require("./middleWare/errorMiddleware");
 
 // Routes Middleware
-app.use("/api/users", userRoute)
+app.use("/api/users", userRoute);
+app.use('/api/auth', authRoutes);
 
 // Routes
 app.get("/", (req, res) => {
