@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
-const Item = require("../models/itemModel");
-const { fileSizeFormatter } = require("../utils/fileUpload");
+const Item = require("../backend/models/itemModel");
+const { fileSizeFormatter } = require("../backend/utils/fileUpload");
 const cloudinary = require("cloudinary").v2;
 
 // Create Item

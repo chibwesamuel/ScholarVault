@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const protect = require("../middleWare/authMiddleware");
+const protect = require("../backend/middleWare/authMiddleware");
 const {
   createItem,
   getItems,
@@ -8,7 +8,7 @@ const {
   deleteItem,
   updateItem,
 } = require("../controllers/itemControllers");
-const { upload } = require("../utils/fileUpload");
+const { upload } = require("../backend/utils/fileUpload");
 
 router.post("/", protect, upload.single("image"), createItem);
 router.patch("/:id", protect, upload.single("image"), updateItem);
