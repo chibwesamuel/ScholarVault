@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const protect = require("../backend/middleWare/authMiddleware");
+const protect = require("../middleWare/authMiddleware");
 const {
   createItem,
   getItems,
   getItem,
   deleteItem,
   updateItem,
-} = require("../controllers/itemControllers");
-const { upload } = require("../backend/utils/fileUpload");
+} = require("../../controllers/itemControllers");
+const { upload } = require("../utils/fileUpload");
 
 router.post("/", protect, upload.single("image"), createItem);
 router.patch("/:id", protect, upload.single("image"), updateItem);

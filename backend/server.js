@@ -1,9 +1,9 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import userRoute from '../routes/userRoute.js';
-import cookieParser from 'cookie-parser';
-import { default as authRoutes } from '../routes/authRoutes.js';
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const userRoute = require('./backend/controllers/userRoute');
+const cookieParser = require('cookie-parser');
+const authRoutes = require('./backend/routes/authRoutes');
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const errorHandler = require('./middleWare/errorMiddleware');
+const errorHandler = require('./backend/middleWare/errorMiddleware');
 
 // Routes Middleware
 app.use('/api/users', userRoute);

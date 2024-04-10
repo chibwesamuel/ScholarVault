@@ -1,17 +1,5 @@
-const express = require('express');
-const router = express.Router();
-const jwt = require('jsonwebtoken');
-const {
-  registerUser,
-  loginUser,
-  logout,
-  getUser,
-  loginStatus,
-  updateUser,
-  changePassword,
-  forgotPassword,
-  resetPassword,
-} = require('../controllers/userController');
+const router = require('express').Router();
+const { registerUser, loginUser, logout, getUser, loginStatus, updateUser, changePassword, forgotPassword, resetPassword } = require('../controllers/userController');
 const protect = require('../middleWare/authMiddleware');
 
 router.post('/register', registerUser);
