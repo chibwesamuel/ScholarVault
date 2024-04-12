@@ -1,9 +1,9 @@
 // backend/controllers/index.js
 
-const userController = require('./userController');
-const errorHandler = require('../middleWare/errorMiddleware');
+import userController from './userController';
+import errorHandler from '../middleWare/errorMiddleware';
 
-module.exports = {
+export default {
   userController,
   errorHandler,
 };
