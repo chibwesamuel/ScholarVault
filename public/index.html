@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholar Vault - Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0;">Login</h2>
+            <!-- Login Form -->
+            <form action="/login" method="POST">
+                <div class="input-box animation" style="--i:1;">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:2;">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3;">Login</button>
+                <div class="logreg-link animation" style="--i:3;">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0;">Welcome Back!</h2>
+            <p class="animation" style="--i:1;">Please login to ScholarVault</p>
+        </div>
+
+        <div class="form-box register">
+            <h2 class="animation" style="--i:17;">Sign Up</h2>
+            <!-- Signup Form -->
+            <form action="/sign_up" method="POST">
+                <div class="input-box animation" style="--i:18;">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:19;">
+                    <input type="text" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box animation" style="--i:20;">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box animation" style="--i:21;">
+                    <input type="text" id="gender" name="gender" required>
+                    <label for="gender">Gender</label>
+                    <i class='bx bx-male-female'></i>
+                </div>
+                <button type="submit" value="Submit" id="submit" class="btn animation" style="--i:21;">Sign Up</button>
+                <div class="logreg-link" style="--i:22;">
+                    <p class="animation">Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="info-text register" style="--i:0;">
+            <h2 class="animation" style="--i:1;">Scholar Vault</h2>
+            <p class="animation">Please register here</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
