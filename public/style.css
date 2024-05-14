@@ -13,6 +13,14 @@ body {
     background: #081b29;
 }
 
+.wrapper1 {
+    color: #fff;
+}
+
+.wrapper1 .sidebar {
+    color: #fff;
+}
+
 .wrapper {
     position: relative;
     width: 750px;
@@ -281,4 +289,3 @@ body {
     transform: rotate(-11deg) skewY(-41deg);
     transition-delay: 1.2s;
 }
-
