@@ -425,7 +425,9 @@ aside .top div.close{
 /* sidebar */
 
 aside .sidebar{
-	background-color: var(--clr-white);
+	background-color: #081b29;
+    border: 2px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
 	display: flex;
 	flex-direction: column;
 	height: 86vh;
@@ -486,26 +488,22 @@ main input{
 	color: var(clr-dark);
 }
 
-main .date{
-	display: inline-block;
-	background-color: var(--clr-white);
-	border-radius: var(--border-radius-1);
-	margin-top: 1rem;
-	padding: 0.5rem 1.6rem;
-}
-
 main .insights{
+    padding: 70px;
+    margin-left: 50px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1.6rem;
 }
 
 main .insights>div{
-	background-color: var(--clr-white);
+	background-color: #081b29;
 	padding: var(--card-padding);
+    color: #fff;
 	border-radius: var(--card-border-radius);
 	margin-top: 1rem;
-	box-shadow: var(--box-shadow);
+    border: 2px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
 	transition: .3s ease;
 }
 
@@ -540,19 +538,21 @@ main .insights > div .middle h1{
 }
 
 main h1{
-    color: var(--clr-dark);
+    color: #ffff;
+    align-items: center;
+    font-size: 3rem;
 }
 
 main .insights h1{
-    color: var(--clr-dark);
+    color: #ffff;
 }
 
 main .insights h3{
-    color: var(--clr-dark);
+    color: #fff;
 }
 
 main .insights p{
-    color: var(--clr-dark);
+    color: #ffff;
 }
 
 main .insights .progress{
@@ -562,30 +562,211 @@ main .insights .progress{
     border-radius: 50px;
 }
 
-main .insights svg{
-    height: 150px;
-    width: 150px;
+main .insights .progress .number{
     position: absolute;
-    top: 0;
+    top: 5%;
+    left: 5%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main .insights svg circle{
-    fill: none;
-    stroke: var(--clr-primary);
-    transform: rotate(270,80,80);
-    stroke-width: 5;
+.wrapper2 {
+    position: relative;
+    width: 600px;
+    height: 600px; /* Adjust height to fit content */
+    background: transparent;
+    border: 2px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
+    overflow: hidden;0
+    margin-left: 230px; /* Move wrapper2 further to the right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding for spacing */
 }
 
-main .insights .items svg circle{
-    stroke-dashoffset: 10;
-    stroke-dasharray: 150;
+.wrapper2 .form-box {
+    width: 100%; /* Adjust width to take up more space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
 }
 
-main .insights .stock svg circle{
-    stroke-dashoffset: 0;
-    stroke-dasharray: 150;
+.wrapper2 .form-box .input-box {
+    width: 100%; /* Make input boxes full width */
+    margin-bottom: 15px; /* Add margin for spacing */
 }
 
-main .insights .department svg circle{
-    stroke: var(--clr-success);
+.wrapper2 .form-box .input-box input {
+    width: calc(100% - 40px); /* Adjust input width */
+    padding: 0; /* Add padding to input */
+    margin-top: 10px; /* Add margin to input */
+}
+
+.wrapper2 .form-box .input-box label {
+    font-size: 14px;
+    color: #fff;
+}
+
+.wrapper2 .form-box .input-box span {
+    position: absolute;
+    margin-top: 10px;
+    right: 10px;
+    color: #0ef;
+}
+
+.wrapper2 .form-box .btn {
+    width: 100%;
+    padding: 10px;
+    background: #0ef;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.wrapper2 .form-box .btn:hover {
+    background: #06c;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white; /* Set text color to white */
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #081b29; 
+    color: white; /* Ensure table headers also have white text */
+}
+
+.table tr:nth-child(even) {
+    background-color: #081b29;
+}
+
+.wrapper2 {
+    max-width: 1200px; /* Adjust the max-width to make the wrapper box wider */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #081b29; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper3 {
+    position: relative;
+    width: 900px;
+    height: auto; /* Adjust height to fit content */
+    background: transparent;
+    border: 2px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
+    overflow: hidden;
+    margin-left: 100px; /* Move wrapper2 further to the right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding for spacing */
+}
+
+.wrapper3 .form-box {
+    width: 100%; /* Adjust width to take up more space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
+}
+
+.wrapper3 .form-box .input-box {
+    width: 100%; /* Make input boxes full width */
+    margin-bottom: 15px; /* Add margin for spacing */
+}
+
+.wrapper3 .form-box .input-box input {
+    width: calc(100% - 40px); /* Adjust input width */
+    padding: 0; /* Add padding to input */
+    margin-top: 10px; /* Add margin to input */
+}
+
+.wrapper3 .form-box .input-box label {
+    font-size: 14px;
+    color: #fff;
+}
+
+.wrapper3 .form-box .input-box span {
+    position: absolute;
+    margin-top: 10px;
+    right: 10px;
+    color: #0ef;
+}
+
+.wrapper3 .form-box .btn {
+    width: 100%;
+    padding: 10px;
+    background: #0ef;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.wrapper3 .form-box .btn:hover {
+    background: #06c;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white; /* Set text color to white */
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #081b29; 
+    color: white; /* Ensure table headers also have white text */
+}
+
+.table tr:nth-child(even) {
+    background-color: #081b29;
+}
+
+.wrapper2 {
+    max-width: 1200px; /* Adjust the max-width to make the wrapper box wider */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #081b29; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-box.add-product {
+    padding: 20px;
+}
+
+/* Animation classes */
+.animation {
+    animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Teachers</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="container">
+        <!-- side section start -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2>Scholar<span class="danger">Vault</span></h2>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="/home.html">
+                    <span class="material-symbols-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-symbols-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-symbols-sharp">report</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="/index.html">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- side section end -->
+
+        <!-- main section start -->
+        <main>
+            <div class="wrapper2">
+                <div class="form-box add-teacher">
+                    <h2 class="animation" style="--i:0;">Add Teacher</h2>
+                    <!-- Add Teacher Form -->
+                    <form action="/add_teacher" method="POST">
+                        <div class="input-box animation" style="--i:1;">
+                            <input type="text" id="surname" name="surname" required>
+                            <label for="surname">Surname</label>
+                            <span class="material-symbols-sharp">id_card</span>
+                        </div>
+                        <div class="input-box animation" style="--i:1;">
+                            <input type="text" id="firstName" name="firstName" required>
+                            <label for="firstName">First Name</label>
+                            <span class="material-symbols-sharp">id_card</span>
+                        </div>
+                        <div class="input-box animation" style="--i:2;">
+                            <input type="number" id="tsNumber" name="tsNumber">
+                            <label for="tsNumber">TS Number</label>
+                            <span class="material-symbols-sharp">123</span>
+                        </div>
+                        <div class="input-box animation" style="--i:3;">
+                            <input type="text" id="gender" name="gender" required>
+                            <label for="gender">Gender</label>
+                            <span class="material-symbols-sharp">wc</span>
+                        </div>
+                        <div class="input-box animation" style="--i:4;">
+                            <input type="text" id="qualification" name="qualification">
+                            <label for="qualification">Qualification</label>
+                            <span class="material-symbols-sharp">school</span>
+                        </div>
+                        <div class="input-box animation" style="--i:5;">
+                            <input type="text" id="specialization" name="specialization" required>
+                            <label for="specialization">Specialization</label>
+                            <span class="material-symbols-sharp">history_edu</span>
+                        </div>
+                        <button type="submit" class="btn animation" style="--i:7;">Add Teacher</button>
+                    </form>
+                </div>
+                               
+            </div>
+        </main>
+        <!-- main section end -->
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Check if the user is authenticated
+        fetch('/api/check-auth', {
+            method: 'GET',
+            credentials: 'include'
+        })
+        .then(response => {
+            if (!response.ok) {
+                // If the user is not authenticated, redirect to index.html
+                window.location.href = '/index.html';
+            }
+        })
+        .catch(error => {
+            console.error('Error checking authentication:', error);
+            window.location.href = '/index.html';
+        });
+    </script>
+    
+</body>
+</html>
