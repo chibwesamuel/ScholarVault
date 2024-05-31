@@ -81,23 +81,6 @@
         </main>
         <!-- main section end -->
     </div>
-    <script src="script.js"></script>
-    <script>
-        // Check if the user is authenticated
-        fetch('/api/check-auth', {
-            method: 'GET',
-            credentials: 'include'
-        })
-        .then(response => {
-            if (!response.ok) {
-                // If the user is not authenticated, redirect to index.html
-                window.location.href = '/index.html';
-            }
-        })
-        .catch(error => {
-            console.error('Error checking authentication:', error);
-            window.location.href = '/index.html';
-        });
-    </script>    
+    <script src="script.js"></script>    
 </body>
 </html>

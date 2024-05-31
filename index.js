@@ -25,8 +25,8 @@ app.use(session({
     secret: 'your_secret_key',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: 'mongodb+srv://smchibwe:smchibwe@cluster0.zl18dpk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/scholarvault' }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000 } // 1 day
+    store: MongoStore.create({ mongoUrl: '' }),
+    cookie: { maxAge: 24 * 60 * 60 * 1000 } 
 }));
 
 // Multer setup for file uploads
