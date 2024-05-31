@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-mongoose.connect('mongodb+srv://smchibwe:smchibwe@cluster0.zl18dpk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/scholarvault', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', () => console.log("Error in connecting to database"));
