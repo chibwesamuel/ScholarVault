@@ -9,6 +9,7 @@ ScholarVault is an innovative School Inventory Management System crafted by me, 
 - **Dynamic Reporting and Analytics**: The system provides comprehensive reporting and analytics features, enabling administrators to gain insights into inventory trends, usage patterns, and more, facilitating informed decision-making.
 - **Scalable and Customizable**: ScholarVault is built on a scalable architecture, allowing it to adapt to the evolving needs of educational institutions. It offers flexible configuration options for categories, conditions, and other parameters, ensuring a tailored solution for each organization.
 - **Responsive Design**: I have designed the user interface to be responsive, offering a seamless experience across devices, including desktops, tablets, and mobile phones.
+- **Future explorations**: Designed with multi-tenant SaaS scalability in mind.
 
 ## Technologies Used
 
